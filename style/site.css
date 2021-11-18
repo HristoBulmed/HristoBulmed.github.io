@@ -3,6 +3,40 @@ body {
     margin: auto;
     text-align: left;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+.cell-top {
+    float:left;
+    display:table-column;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    width:200px;
+    background-color:#ccc;
+    font-weight: bold;
+    font-size: 20px;
+}
+.table {
+    display: table;
+    width:auto;
+    background-color:#eee;
+    border:1px solid  #666666;
+    border-collapse: collapse;
+    border-spacing:10px; 
+} 
+
+.row { 
+    display:table-row;
+    border-bottom: 2px solid purple;
+    width: auto;
+} 
+.cell {
+    float:left;
+    display:table-column;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    width:200px;
+    background-color:#ccc;
 }
 
 header {
@@ -66,9 +100,6 @@ nav div {
 }
 
 .home h1 {
-    text-decoration: underline;
-    text-decoration-style: wavy;
-    text-decoration-color: rgba(255, 0, 0, 0.315);
     font-size: 40px;
     font-style: oblique;
     

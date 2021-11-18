@@ -32,6 +32,11 @@ const createTemplate = (onSubmit, isFilled) => html`
 </section>`;
 
 export async function createPage(ctx) {
+    if (!sessionStorage.getItem('username')) {
+        ctx.page.redirect('/');
+        return
+    }
+
     ctx.render(createTemplate(onSubmit));
 
     async function onSubmit(event) {

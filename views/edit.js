@@ -32,6 +32,10 @@ const editTemplate = (parlour, onSubmit, isFilled) => html`
 </section>`;
 
 export async function editPage(ctx) {
+    if (!sessionStorage.getItem('username')) {
+        ctx.page.redirect('/');
+        return
+    }
     const parlourId = ctx.params.id;
     const parlour = await getParlourById(parlourId);
     ctx.render(editTemplate(parlour, onSubmit, false));

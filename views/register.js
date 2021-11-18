@@ -27,6 +27,11 @@ const registerTemplate = (onSubmit, isFilled, isMatching) => html`
 </section>`;
 
 export async function registerPage(ctx) {
+    if (!sessionStorage.getItem('username')) {
+        ctx.page.redirect('/');
+        return
+    }
+
     ctx.render(registerTemplate(onSubmit));
 
     async function onSubmit(event) {
