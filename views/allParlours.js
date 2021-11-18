@@ -20,6 +20,7 @@ const parlourTemplate = (parlour) => html`
     <p>${parlour.machineSN}</p>
     <p>${parlour.applicator}</p>
     <p>${parlour.applicatorSN}</p>
+    <p>${parlour.description}</p>
     <!-- <img alt="no-pic" src=${parlour.city}> -->
 </div>
 <div>

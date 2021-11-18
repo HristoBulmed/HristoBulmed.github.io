@@ -56,6 +56,6 @@ export async function editPage(ctx) {
 
         await editParlourById(parlourId, data);
         event.target.reset();
-        ctx.page.redirect(`allParlours`);
+        ctx.page.redirect(`/allParlours`);
     }
 }
