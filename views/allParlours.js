@@ -1,6 +1,6 @@
 import { html } from 'https://unpkg.com/lit-html?module';
 
-import { getParlours } from '../src/api/data.js';
+import { getParlours, } from '../src/api/data.js';
 
 const allParloursTemplate = (data) => html`
 <section>
@@ -29,7 +29,8 @@ const parlourTemplate = (parlour) => html`
     <td class="cell">${parlour.applicator}</td>
     <td class="cell">${parlour.applicatorSN}</td>
     <td class="cell">${parlour.description}</td>
-    <td class="cell"><a class="btn" href="/edit/${parlour.objectId}">Edit</a></td>
+    <td class="cell"><a class="btn" href="/edit/${parlour.objectId}">Edit</a>/<a class="btn"
+            href="/delete/${parlour.objectId}">Delete</a></td>
 </tr>`;
 
 export async function allParloursPage(ctx) {
@@ -39,5 +40,8 @@ export async function allParloursPage(ctx) {
     }
     const [data] = await getParlours();
 
+
     ctx.render(allParloursTemplate(data));
+
+
 }

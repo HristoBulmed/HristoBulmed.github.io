@@ -9,6 +9,7 @@ import { logout as apiLogout } from '../src/api/data.js';
 import { allParloursPage } from '../views/allParlours.js';
 // import { detailsPage } from '../views/details.js';
 import { editPage } from '../views/edit.js';
+import { deletePage } from '../views/delete.js';
 // import { myCarsPage } from '../views/mycars.js';
 
 const container = document.querySelector('.container');
@@ -22,6 +23,7 @@ page('/create', decorateContext, createPage);
 page('/allParlours', decorateContext, allParloursPage);
 // page('/details/:id', decorateContext, detailsPage);
 page('/edit/:id', decorateContext, editPage);
+page('/delete/:id', decorateContext, deletePage);
 // page('/my-cars', decorateContext, myCarsPage);
 
 setUserNav();
