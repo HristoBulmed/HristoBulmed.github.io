@@ -14,13 +14,13 @@ const allParloursTemplate = (data) => html`
 
 const parlourTemplate = (parlour) => html`
 <div>
-    <p>${parlour.parlourName}</p>
-    <p>${parlour.city}</p>
-    <p>${parlour.machine}</p>
-    <p>${parlour.machineSN}</p>
-    <p>${parlour.applicator}</p>
-    <p>${parlour.applicatorSN}</p>
-    <p>${parlour.description}</p>
+    <p>Name: ${parlour.parlourName}</p>
+    <p>City: ${parlour.city}</p>
+    <p>Machine: ${parlour.machine}</p>
+    <p>Machine SN: ${parlour.machineSN}</p>
+    <p>Applicator: ${parlour.applicator}</p>
+    <p>Applicator SN: ${parlour.applicatorSN}</p>
+    <p>Description ${parlour.description}</p>
     <!-- <img alt="no-pic" src=${parlour.city}> -->
 </div>
 <div>
