@@ -33,7 +33,7 @@ const editTemplate = (parlour, onSubmit, isFilled) => html`
 
 export async function editPage(ctx) {
     const parlourId = ctx.params.id;
-    const parlour = await getCarById(parlourId);
+    const parlour = await getParlourById(parlourId);
     ctx.render(editTemplate(parlour, onSubmit, false));
 
     async function onSubmit(event) {
