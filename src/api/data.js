@@ -49,9 +49,9 @@ export async function deleteParlourById(id) {
 
 export async function getParloursByName(criteria) {
     // const query = JSON.stringify({ "parlourName": { "$regex": criteria, "$options": "i" } });
-    const query = JSON.stringify({ $or: [{ parlourName: criteria }, { city: criteria }, { machine: criteria }, { machineSN: criteria }, { applicator: criteria }, { applicatorSN: criteria },] });
+    const query = JSON.stringify({ $or: [{ "parlourName": { "$regex": criteria, "$options": "i" } }, { "city": { "$regex": criteria, "$options": "i" } }, { "machine": { "$regex": criteria, "$options": "i" } }, { "machineSN": { "$regex": criteria, "$options": "i" } }, { "applicator": { "$regex": criteria, "$options": "i" } }, { "applicatorSN": { "$regex": criteria, "$options": "i" } }, { "description": { "$regex": criteria, "$options": "i" } }] });
+    console.log(query);
     return Object.values(await api.get(host + `/classes/Beauty?where=` + encodeURIComponent(query)));
 }
 
 
-//

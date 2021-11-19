@@ -55,6 +55,7 @@ export async function allParloursPage(ctx) {
 
 
         const [searchResult] = await getParloursByName(search);
+        console.log(searchResult);
         ctx.render(allParloursTemplate(searchResult, onSubmit))
 
     }
