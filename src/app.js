@@ -12,6 +12,8 @@ import { editPage } from '../views/edit.js';
 import { deletePage } from '../views/delete.js';
 // import { myCarsPage } from '../views/mycars.js';
 
+
+
 const container = document.querySelector('.container');
 document.getElementById('logoutBtn').addEventListener('click', logout);
 
@@ -32,6 +34,7 @@ page.start();
 function decorateContext(ctx, next) {
     ctx.render = (content) => render(content, container);
     ctx.setUserNav = setUserNav;
+
     next();
 }
 

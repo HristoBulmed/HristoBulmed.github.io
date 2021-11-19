@@ -53,9 +53,9 @@ export async function createPage(ctx) {
             description: formData.get('new-description')
         }
 
-        if (!parlour.parlourName || !parlour.city || !parlour.machine || !parlour.machineSN || !parlour.applicator || !parlour.applicatorSN || !parlour.description) {
-            return ctx.render(createTemplate(onSubmit, true))
-        }
+        // if (!parlour.parlourName || !parlour.city || !parlour.machine || !parlour.machineSN || !parlour.applicator || !parlour.applicatorSN || !parlour.description) {
+        //     return ctx.render(createTemplate(onSubmit, true))
+        // }
 
         await createParlour(parlour);
         event.target.reset();

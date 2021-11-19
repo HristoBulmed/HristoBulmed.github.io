@@ -11,7 +11,7 @@ function createPointer(name, id) {
     return {
         __type: 'Pointer',
         className: name,
-        objectId: id
+        parlourName: id
     };
 }
 
@@ -47,10 +47,11 @@ export async function deleteParlourById(id) {
 //     return api.get(host + '/data/recipes?select=_id%2Cname%2Cimg&sortBy=_createdOn%20desc&pageSize=3');
 // }
 
-// export async function getCarsByOwner(userId) {
-//     const query = JSON.stringify({ owner: createPointer('_User', userId) })
-//     return Object.values(await api.get(host + `/classes/Car?where=` + encodeURIComponent(query)));
-// }
+export async function getParloursByName(criteria) {
+    // const query = JSON.stringify({ "parlourName": { "$regex": criteria, "$options": "i" } });
+    const query = JSON.stringify({ $or: [{ parlourName: criteria }, { city: criteria }, { machine: criteria }, { machineSN: criteria }, { applicator: criteria }, { applicatorSN: criteria },] });
+    return Object.values(await api.get(host + `/classes/Beauty?where=` + encodeURIComponent(query)));
+}
 
 
-
+//

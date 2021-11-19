@@ -1,13 +1,17 @@
 import { html } from 'https://unpkg.com/lit-html?module';
 
-import { getParlours, } from '../src/api/data.js';
+import { getParlours, getParloursByName } from '../src/api/data.js';
 
-const allParloursTemplate = (data) => html`
+const allParloursTemplate = (data, onSubmit) => html`
 <section>
+    <form @submit=${onSubmit}>
+        <input name="search" type="text" placeholder="Search by field">
+        <input type="submit" value="Search">
+    </form>
 
     <table cellspacing="0" class="table">
         <tr class="row">
-            <td class="cell-top">NAME</td>
+            <td class="cell-top">PARLOUR NAME</td>
             <td class="cell-top">CITY</td>
             <td class="cell-top">MACHINE</td>
             <td class="cell-top">MACHINE SN</td>
@@ -41,7 +45,17 @@ export async function allParloursPage(ctx) {
     const [data] = await getParlours();
 
 
-    ctx.render(allParloursTemplate(data));
+    ctx.render(allParloursTemplate(data, onSubmit));
+
+    async function onSubmit(event) {
+        event.preventDefault();
+
+        const formData = new FormData(event.target);
+        const search = formData.get('search');
 
 
+        const [searchResult] = await getParloursByName(search);
+        ctx.render(allParloursTemplate(searchResult, onSubmit))
+
+    }
 }
