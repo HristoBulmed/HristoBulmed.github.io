@@ -54,9 +54,9 @@ export async function editPage(ctx) {
             description: formData.get('new-description')
         }
 
-        if (!data.parlourName || !data.city || !data.machine || !data.machineSN || !data.applicator || !data.applicatorSN || !data.description) {
-            return ctx.render(editTemplate(parlour, onSubmit, true));
-        }
+        // if (!data.parlourName || !data.city || !data.machine || !data.machineSN || !data.applicator || !data.applicatorSN || !data.description) {
+        //     return ctx.render(editTemplate(parlour, onSubmit, true));
+        // }
 
         await editParlourById(parlourId, data);
         event.target.reset();
